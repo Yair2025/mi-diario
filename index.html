@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mi Diario</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <canvas id="matrix"></canvas>
+</head>
+
+<body>
+
+    <!-- LOGIN -->
+    <div id="login" class="container">
+        <h2>🔒 Mi Diario</h2>
+        <input type="password" id="password" placeholder="Contraseña">
+        <button onclick="verificar()">Entrar</button>
+        <p id="error"></p>
+    </div>
+
+    <!-- APP -->
+    <div id="app" class="container" style="display:none;">
+        
+        <div class="header">
+            <h1>📓 Mi Diario</h1>
+            <button class="logout" onclick="cerrarSesion()">Salir</button>
+        </div>
+
+        <textarea id="entrada" placeholder="¿Qué pasó hoy?"></textarea>
+        <button onclick="guardarEntrada()">Guardar</button>
+
+        <!-- BOTÓN BACKUP -->
+        <div class="botones">
+    <button onclick="guardarEntrada()">Guardar</button>
+    <button id="btnBackup" onclick="exportarDiario()">💾 Backup</button>
+</div>
+
+    <script src="js/auth.js"></script>
+    <script src="js/app.js"></script>
+
+</body>
+</html>

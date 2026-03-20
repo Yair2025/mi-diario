@@ -1,0 +1,120 @@
+body {
+    font-family: 'Courier New', monospace;
+    background: #000;
+    color: #00ff88;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* CONTENEDOR */
+.container {
+    background: #0a0a0a;
+    padding: 25px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 25px #00ff88;
+    text-align: center;
+}
+
+/* HEADER */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* INPUTS */
+input, textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #00ff88;
+    background: black;
+    color: #00ff88;
+    outline: none;
+}
+
+/* PLACEHOLDER */
+textarea::placeholder,
+input::placeholder {
+    color: #00ff88aa;
+}
+
+/* BOTONES */
+button {
+    padding: 12px;
+    width: 100%;
+    border: 1px solid #00ff88;
+    border-radius: 8px;
+    background: black;
+    color: #00ff88;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px; /* 👈 separación */
+    transition: 0.3s;
+}
+
+/* HOVER EFECTO */
+button:hover {
+    background: #00ff88;
+    color: black;
+    box-shadow: 0 0 10px #00ff88;
+}
+
+/* BOTÓN SALIR */
+.logout {
+    width: auto;
+    padding: 8px 15px;
+    background: black;
+    border: 1px solid #ff3b3b;
+    color: #ff3b3b;
+}
+
+.logout:hover {
+    background: #ff3b3b;
+    color: black;
+    box-shadow: 0 0 10px #ff3b3b;
+}
+
+.botones {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* ENTRADAS */
+.entrada {
+    background: #050505;
+    margin-top: 15px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #00ff88;
+    text-align: left;
+    box-shadow: 0 0 10px #00ff8855;
+}
+
+/* FECHA */
+small {
+    color: #00ff88aa;
+}
+
+/* TITULOS */
+h1, h2 {
+    text-shadow: 0 0 8px #00ff88;
+}
+
+/* CANVAS MATRIX */
+#matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* atrás de todo */
+    background: black;
+}
