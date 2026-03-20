@@ -2,19 +2,19 @@
 function guardarEntrada() {
     const texto = document.getElementById("entrada").value;
 
-    if (texto.trim() === "") return;
+    if (texto === "") return;
 
-    let entradas = JSON.parse(localStorage.getItem("diario")) || [];
+    const entradas = JSON.parse(localStorage.getItem("diario")) || [];
 
-    const nuevaEntrada = {
+    entradas.push({
         texto: texto,
         fecha: new Date().toLocaleString()
-    };
+    });
 
-    entradas.push(nuevaEntrada);
     localStorage.setItem("diario", JSON.stringify(entradas));
 
     document.getElementById("entrada").value = "";
+
     mostrarEntradas();
 }
 
@@ -132,3 +132,22 @@ window.addEventListener("resize", () => {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 });
+
+function mostrarEntradas() {
+    const lista = document.getElementById("listaEntradas");
+    lista.innerHTML = "";
+
+    const entradas = JSON.parse(localStorage.getItem("diario")) || [];
+
+    entradas.reverse().forEach(e => {
+        const div = document.createElement("div");
+        div.classList.add("entrada");
+
+        div.innerHTML = `
+            <small>${e.fecha}</small>
+            <p>${e.texto}</p>
+        `;
+
+        lista.appendChild(div);
+    });
+}
