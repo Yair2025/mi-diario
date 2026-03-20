@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <title>Mi Diario</title>
     <link rel="stylesheet" href="css/styles.css">
-    <canvas id="matrix"></canvas>
 </head>
 
 <body>
+
+    <!-- CANVAS MATRIX -->
+    <canvas id="matrix"></canvas>
 
     <!-- LOGIN -->
     <div id="login" class="container">
@@ -26,13 +28,17 @@
         </div>
 
         <textarea id="entrada" placeholder="¿Qué pasó hoy?"></textarea>
-        <button onclick="guardarEntrada()">Guardar</button>
 
-        <!-- BOTÓN BACKUP -->
+        <!-- BOTONES -->
         <div class="botones">
-    <button onclick="guardarEntrada()">Guardar</button>
-    <button id="btnBackup" onclick="exportarDiario()">💾 Backup</button>
-</div>
+            <button onclick="guardarEntrada()">Guardar</button>
+            <button id="btnBackup" onclick="exportarDiario()">💾 Backup</button>
+        </div>
+
+        <h2>Entradas</h2>
+        <div id="listaEntradas"></div>
+
+    </div>
 
     <script src="js/auth.js"></script>
     <script src="js/app.js"></script>
