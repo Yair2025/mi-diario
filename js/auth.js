@@ -1,20 +1,41 @@
-const PASSWORD = "270125"; // 🔐 KEY
+// 🔐 Cambia tu contraseña aquí
+const PASSWORD = "270125";
 
 function verificar() {
-    const pass = document.getElementById("password").value;
+    const input = document.getElementById("password").value;
+    const error = document.getElementById("error");
 
-    if (pass === PASSWORD) {
+    if (input === PASSWORD) {
+        // Ocultar login
         document.getElementById("login").style.display = "none";
+
+        // Mostrar app
         document.getElementById("app").style.display = "block";
-        mostrarEntradas();
-        actualizarTextoBackup();
+
+        // Limpiar error
+        error.textContent = "";
+
+        // 🔥 Cargar historial
+        if (typeof mostrarEntradas === "function") {
+            mostrarEntradas();
+        }
+
     } else {
-        document.getElementById("error").innerText = "❌ Contraseña incorrecta";
+        error.textContent = "❌ Contraseña incorrecta";
     }
 }
 
+// 🚪 Cerrar sesión
 function cerrarSesion() {
     document.getElementById("app").style.display = "none";
     document.getElementById("login").style.display = "block";
+
+    // Limpiar input
     document.getElementById("password").value = "";
 }
+
+document.getElementById("password").addEventListener("keypress", function(e) {
+    if (e.key === "Enter") {
+        verificar();
+    }
+});
